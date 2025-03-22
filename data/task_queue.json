@@ -1,0 +1,110 @@
+[
+  {
+    "url": "https://example.com",
+    "task_id": "c5b77d12-adaa-446f-857f-377c7f0bf7ec",
+    "name": "示例任务1",
+    "priority": "NORMAL",
+    "status": "PENDING",
+    "retry_count": 0,
+    "max_retries": 3,
+    "timeout": 60,
+    "created_at": 1742639077.3436813,
+    "started_at": null,
+    "finished_at": null,
+    "worker_id": null,
+    "parent_id": null,
+    "result": null,
+    "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    },
+    "cookies": {
+      "session_id": "sample_session_id"
+    },
+    "metadata": {
+      "screenshot": true,
+      "category": "example",
+      "tags": [
+        "test",
+        "sample"
+      ]
+    },
+    "action_rules": [
+      {
+        "type": "wait",
+        "time": 2000
+      },
+      {
+        "type": "scroll",
+        "y": 500
+      }
+    ],
+    "extraction_rules": [
+      {
+        "field": "title",
+        "selector": "h1",
+        "attr": "textContent"
+      },
+      {
+        "field": "links",
+        "selector": "a",
+        "attr": "href",
+        "multiple": true
+      }
+    ]
+  },
+  {
+    "url": "https://github.com",
+    "task_id": "4ca16a03-092c-4090-bcc6-91020a197535",
+    "name": "GitHub首页",
+    "priority": "HIGH",
+    "status": "PENDING",
+    "retry_count": 0,
+    "max_retries": 3,
+    "timeout": 120,
+    "created_at": 1742639077.3436813,
+    "started_at": null,
+    "finished_at": null,
+    "worker_id": null,
+    "parent_id": null,
+    "result": null,
+    "headers": {},
+    "cookies": {},
+    "metadata": {
+      "screenshot": true,
+      "category": "social",
+      "tags": [
+        "github",
+        "code"
+      ]
+    },
+    "action_rules": [
+      {
+        "type": "wait_for_selector",
+        "selector": ".home-campaign h1"
+      },
+      {
+        "type": "screenshot",
+        "path": "./data/screenshots/github_home.png",
+        "full_page": true
+      }
+    ],
+    "extraction_rules": [
+      {
+        "field": "title",
+        "selector": ".home-campaign h1",
+        "attr": "textContent"
+      },
+      {
+        "field": "description",
+        "selector": ".home-campaign h2",
+        "attr": "textContent"
+      },
+      {
+        "field": "features",
+        "selector": ".home-campaign .d-md-flex h3",
+        "attr": "textContent",
+        "multiple": true
+      }
+    ]
+  }
+]

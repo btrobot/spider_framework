@@ -1,0 +1,11 @@
+playwright==1.43.0
+# python-multiprocessing==2.6.2.1  # 不需要，已包含在Python标准库中
+pyyaml==6.0.1
+loguru==0.7.2
+requests==2.32.3
+pandas==2.2.3
+tqdm==4.66.2
+python-dotenv==1.0.1
+psutil==5.9.8
+pytest==7.4.0
+pytest-playwright==0.4.3 

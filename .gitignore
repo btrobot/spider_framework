@@ -1,0 +1,83 @@
+# Python 字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C扩展
+*.so
+
+# 发行版 / 打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller生成的文件
+*.manifest
+*.spec
+
+# 单元测试 / 测试覆盖率报告
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+myenv/
+.env
+
+# IDE / 编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
+.spyderproject
+.spyproject
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# 爬虫框架特有的文件和目录
+# 爬虫数据和缓存
+spider_framework/data/screenshots/*
+!spider_framework/data/screenshots/.gitkeep
+spider_framework/data/task_queue.json
+spider_framework/temp/
+spider_framework/cache/
+
+# 日志文件
+spider_framework/logs/
+*.log
+
+# 浏览器自动下载的文件
+.playwright/
+browser_data/
+
+# 系统文件
+.DS_Store
+Thumbs.db

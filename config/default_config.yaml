@@ -1,0 +1,68 @@
+# 爬虫框架默认配置文件
+
+# 调度器配置
+scheduler:
+  max_workers: 4                 # 最大工作进程数
+  queue_size: 100                # 任务队列大小
+  check_interval: 5              # 任务检查间隔（秒）
+  heartbeat_timeout: 30          # 心跳超时时间（秒）
+  retry_count: 3                 # 任务重试次数
+  retry_interval: 10             # 任务重试间隔（秒）
+
+# 工作进程配置
+worker:
+  timeout: 300                   # 任务处理超时时间（秒）
+  concurrent_tasks: 1            # 每个工作进程的并发任务数
+  heartbeat_interval: 10         # 心跳发送间隔（秒）
+  shutdown_timeout: 30           # 优雅关闭超时时间（秒）
+
+# Playwright配置
+playwright:
+  browser: "chromium"            # 浏览器类型：chromium, firefox, webkit
+  headless: true                 # 是否使用无头模式
+  slow_mo: 50                    # 操作减缓毫秒数
+  timeout: 30000                 # 页面操作超时时间（毫秒）
+  user_agent: ""                 # 自定义User-Agent，留空使用默认
+  viewport:
+    width: 1280
+    height: 800
+  ignore_https_errors: true      # 忽略HTTPS错误
+  proxy: ""                      # 代理设置，格式: "http://user:pass@host:port"
+
+# 数据存储配置
+storage:
+  type: "json"                   # 存储类型：json, csv, mongodb, mysql
+  path: "./data"                 # 文件存储路径
+  filename_template: "data_{timestamp}.{ext}"  # 文件名模板
+  db_config:                     # 数据库配置
+    host: "localhost"
+    port: 27017
+    database: "spider_data"
+    username: ""
+    password: ""
+
+# 日志配置
+logging:
+  level: "INFO"                  # 日志级别：DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"  # 日志格式
+  file: "./logs/spider.log"      # 日志文件路径
+  rotation: "500 MB"             # 日志轮转大小
+  retention: "10 days"           # 日志保留时间
+  compression: "zip"             # 日志压缩格式
+
+# 请求配置
+request:
+  timeout: 30                    # 请求超时时间（秒）
+  max_retries: 3                 # 最大重试次数
+  retry_delay: 5                 # 重试延迟（秒）
+  delay: 1                       # 请求间隔（秒）
+  random_delay: true             # 是否使用随机延迟
+  random_delay_range: [0.5, 3]   # 随机延迟范围（秒）
+
+# 系统配置
+system:
+  debug: false                   # 是否开启调试模式
+  temp_dir: "./temp"             # 临时文件目录
+  cache_dir: "./cache"           # 缓存目录
+  max_memory_percent: 80         # 最大内存使用百分比
+  env_file: ".env"               # 环境变量文件 
